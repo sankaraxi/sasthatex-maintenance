@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasthatex | Power Tools & Industrial Equipment — Under Maintenance</title>
+    <!-- Tailwind CSS for responsive layout and utility styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Barlow Condensed, Inter & JetBrains Mono for heavy-duty industrial typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Barlow Condensed', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        carbon: {
+                            950: '#0D0F12',
+                            900: '#121417',
+                            800: '#1C1F24',
+                            700: '#272B33',
+                        },
+                        steel: {
+                            300: '#CBD5E1',
+                            400: '#94A3B8',
+                            500: '#64748B',
+                        },
+                        safety: {
+                            400: '#FACC15',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Industrial metallic grid & subtle diamond-plate texture */
+        .industrial-bg {
+            background-color: #121417;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.12) 0%, transparent 65%),
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px, 16px 16px;
+            background-position: 0 0, 0 0, 0 0, 8px 8px;
+        }
+
+        /* Caution hazard stripe bar */
+        .hazard-stripe {
+            background: repeating-linear-gradient(
+                -45deg,
+                #F59E0B,
+                #F59E0B 10px,
+                #121417 10px,
+                #121417 20px
+            );
+        }
+
+        /* Interlocking gear & precision drill bit animations */
+        @keyframes spinClockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes spinCounterClockwise {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.25)); }
+            50% { filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.55)); }
+        }
+
+        .gear-cw {
+            transform-origin: 28px 28px;
+            animation: spinClockwise 10s linear infinite;
+        }
+
+        .gear-ccw {
+            transform-origin: 54px 44px;
+            animation: spinCounterClockwise 7s linear infinite;
+        }
+
+        .emblem-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        /* Heavy-duty brushed steel panel */
+        .steel-panel {
+            background: linear-gradient(160deg, rgba(28, 31, 36, 0.94) 0%, rgba(18, 20, 23, 0.96) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+        }
+    </style>
+</head>
+<body class="industrial-bg text-steel-300 min-h-screen flex flex-col justify-between selection:bg-safety-500 selection:text-carbon-950 antialiased">
+
+    <!-- Top Brand Header -->
+    <header class="w-full pt-8 pb-4 px-6 flex justify-center">
+        <a href="https://sasthatex.net/" class="group inline-flex flex-col items-center focus:outline-none">
+            <div class="flex items-center gap-3">
+                <!-- Precision Hex Bolt & Gear Brand Mark -->
+                <div class="w-10 h-10 rounded-lg bg-carbon-800 border border-safety-500/40 flex items-center justify-center shadow-lg group-hover:border-safety-400 transition-colors">
+                    <svg class="w-6 h-6 text-safety-500 transition-transform duration-500 group-hover:rotate-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 20.66 7 20.66 17 12 22 3.34 17 3.34 7 12 2" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="3.5" fill="currentColor" fill-opacity="0.2"/>
+                    </svg>
+                </div>
+                <span class="font-display text-4xl sm:text-5xl font-extrabold tracking-wider uppercase text-white">
+                    Sastha<span class="text-safety-500">tex</span>
+                </span>
+            </div>
+            <span class="font-mono text-[11px] uppercase tracking-[0.26em] text-steel-400 mt-1.5">
+                Power Tools &amp; Industrial Equipment &bull; sasthatex.net
+            </span>
+        </a>
+    </header>
+
+    <!-- Main Maintenance Content -->
+    <main class="flex-grow flex items-center justify-center px-4 sm:px-6 py-8">
+        <div class="steel-panel w-full max-w-2xl rounded-2xl p-7 sm:p-12 text-center relative overflow-hidden">
+            
+            <!-- Top Caution Hazard Accent Bar -->
+            <div class="absolute top-0 left-0 right-0 h-1.5 hazard-stripe"></div>
+
+            <!-- Corner Industrial Rivets -->
+            <span class="hidden sm:block absolute top-4 left-4 w-2 h-2 rounded-full bg-carbon-700 border border-steel-500/40" aria-hidden="true"></span>
+            <span class="hidden sm:block absolute top-4 right-4 w-2 h-2 rounded-full bg-carbon-700 border border-steel-500/40" aria-hidden="true"></span>
+            <span class="hidden sm:block absolute bottom-4 left-4 w-2 h-2 rounded-full bg-carbon-700 border border-steel-500/40" aria-hidden="true"></span>
+            <span class="hidden sm:block absolute bottom-4 right-4 w-2 h-2 rounded-full bg-carbon-700 border border-steel-500/40" aria-hidden="true"></span>
+
+            <!-- Animated Interlocking Gears & Wrench Emblem -->
+            <div class="mx-auto mb-6 w-24 h-22 py-2 flex items-center justify-center rounded-xl bg-carbon-950/90 border border-steel-500/25 shadow-inner emblem-glow" aria-hidden="true">
+                <svg class="w-20 h-16" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Primary Large Gear (Safety Amber) -->
+                    <g class="gear-cw">
+                        <circle cx="28" cy="28" r="11" stroke="#F59E0B" stroke-width="3.5"/>
+                        <circle cx="28" cy="28" r="4.5" fill="#121417" stroke="#FACC15" stroke-width="1.5"/>
+                        <!-- Gear Teeth -->
+                        <path d="M28 11V15M28 41V45M11 28H15M41 28H45M16 16L19 19M37 37L40 40M40 16L37 19M19 37L16 40" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Secondary Interlocking Gear (Brushed Steel) -->
+                    <g class="gear-ccw">
+                        <circle cx="54" cy="44" r="7.5" stroke="#94A3B8" stroke-width="3"/>
+                        <circle cx="54" cy="44" r="3" fill="#121417" stroke="#CBD5E1" stroke-width="1.5"/>
+                        <!-- Gear Teeth -->
+                        <path d="M54 32V35M54 53V56M42 44H45M63 44H66M45.5 35.5L47.8 37.8M60.2 50.2L62.5 52.5M62.5 35.5L60.2 37.8M47.8 50.2L45.5 52.5" stroke="#94A3B8" stroke-width="2.8" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- Precision Torque Wrench Overlay -->
+                    <path d="M47 13C49.5 10.5 53.3 10.2 56.1 12.1L52.8 15.4L55.6 18.2L58.9 14.9C60.8 17.7 60.5 21.5 58 24C55.7 26.3 52.3 26.8 49.5 25.5L38.5 36.5L34.5 32.5L45.5 21.5C44.2 18.7 44.7 15.3 47 13Z" fill="#CBD5E1" fill-opacity="0.9"/>
+                </svg>
+            </div>
+
+            <!-- Industrial Status Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-safety-500/10 border border-safety-500/30 font-mono text-xs font-semibold uppercase tracking-wider text-safety-400 mb-5">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-safety-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-safety-500"></span>
+                </span>
+                System Upgrade in Progress
+            </div>
+
+            <!-- Heavy-Duty Headline -->
+            <h1 class="font-display text-3xl sm:text-5xl font-extrabold uppercase tracking-wide text-white leading-tight mb-4">
+                Tooling Up for <span class="text-safety-500">Peak Performance</span>
+            </h1>
+
+            <!-- Supportive Industrial Subtext -->
+            <!-- <p class="text-sm sm:text-base text-steel-400 max-w-lg mx-auto leading-relaxed mb-7">
+                Our digital catalog and ordering platform are currently undergoing heavy-duty upgrades to bring you an expanded range of high-torque power tools, machinery, and industrial equipment.
+            </p> -->
+
+            <!-- Highlighted Relaunch Banner & Countdown -->
+            <div class="bg-carbon-950 border border-steel-500/20 rounded-xl p-5 sm:p-6 mb-8 shadow-lg">
+                <p class="font-mono text-[11px] uppercase tracking-[0.22em] text-steel-400 mb-1.5">
+                    Scheduled Relaunch
+                </p>
+                <p class="text-lg sm:text-2xl font-bold tracking-tight text-white">
+                    We will be back strongly on <span class="text-safety-400 underline decoration-safety-500/50 underline-offset-4">Monday, 23/11/2026</span>
+                </p>
+
+                <!-- Live Countdown Timer -->
+                <div id="countdown-container" class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto mt-5 pt-5 border-t border-steel-500/15">
+                    <div class="bg-carbon-800/90 border border-steel-500/15 rounded-lg py-2.5 px-1">
+                        <span id="days" class="block font-mono text-xl sm:text-2xl font-bold tabular-nums text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-steel-400">Days</span>
+                    </div>
+                    <div class="bg-carbon-800/90 border border-steel-500/15 rounded-lg py-2.5 px-1">
+                        <span id="hours" class="block font-mono text-xl sm:text-2xl font-bold tabular-nums text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-steel-400">Hours</span>
+                    </div>
+                    <div class="bg-carbon-800/90 border border-steel-500/15 rounded-lg py-2.5 px-1">
+                        <span id="minutes" class="block font-mono text-xl sm:text-2xl font-bold tabular-nums text-white">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-steel-400">Minutes</span>
+                    </div>
+                    <div class="bg-carbon-800/90 border border-safety-500/30 rounded-lg py-2.5 px-1">
+                        <span id="seconds" class="block font-mono text-xl sm:text-2xl font-bold tabular-nums text-safety-400">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-wider text-steel-400">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urgent Sales & Technical Support Contact -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-steel-400">
+                <span>Need urgent quotes, bulk orders, or tool servicing?</span>
+                <a href="mailto:info@sasthatex.net" 
+                   class="inline-flex items-center gap-1.5 font-semibold text-safety-400 hover:text-safety-500 transition-colors underline underline-offset-4">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    info@sasthatex.net
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer with Requested Attribution -->
+    <footer class="w-full py-6 px-4 text-center text-xs sm:text-sm text-steel-500">
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+            <span>&copy; 2026 Sasthatex Power Tools. All rights reserved.</span>
+            <span class="hidden sm:inline text-steel-500/40">&bull;</span>
+            <span>
+                Powered by 
+                <a href="https://www.thepixelatedcafe.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="font-semibold text-steel-300 hover:text-safety-400 transition-colors border-b border-steel-500/40 hover:border-safety-400 pb-0.5">
+                    Pixelated
+                </a>
+            </span>
+        </div>
+    </footer>
+
+    <!-- Live Countdown Script targeting Monday, 23 Nov 2026 at 09:00:00 IST -->
+    <script>
+        (function () {
+            // Target date: Monday, November 23, 2026 at 09:00:00 AM IST (+05:30)
+            const targetDate = new Date('2026-11-23T09:00:00+05:30').getTime();
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            const containerEl = document.getElementById('countdown-container');
+
+            function padZero(num) {
+                return num < 10 ? '0' + num : String(num);
+            }
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance <= 0) {
+                    if (containerEl) {
+                        containerEl.innerHTML = '<div class="col-span-4 py-2 font-mono text-sm font-semibold text-safety-400">SYSTEMS ONLINE — RELOADING CATALOG...</div>';
+                    }
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (daysEl) daysEl.textContent = padZero(days);
+                if (hoursEl) hoursEl.textContent = padZero(hours);
+                if (minutesEl) minutesEl.textContent = padZero(minutes);
+                if (secondsEl) secondsEl.textContent = padZero(seconds);
+            }
+
+            updateCountdown();
+            const timerInterval = setInterval(updateCountdown, 1000);
+        })();
+    </script>
+</body>
+</html>
